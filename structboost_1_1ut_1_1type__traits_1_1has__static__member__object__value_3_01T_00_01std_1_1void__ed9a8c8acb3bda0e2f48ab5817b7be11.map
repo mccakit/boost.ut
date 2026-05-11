@@ -1,0 +1,7 @@
+<map id="boost::ut::type_traits::has_static_member_object_value&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().value)&gt; &gt;" name="boost::ut::type_traits::has_static_member_object_value&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().value)&gt; &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="245,23,480,93"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,26,246,37,245,43,174,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,55,197,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,78,245,73,245,78,211,83"/>
+</map>

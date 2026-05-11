@@ -1,0 +1,20 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,85,147,111"/>
+<area shape="rect" id="Node000001" href="$structboost_1_1ut_1_1type__traits_1_1has__static__member__object__epsilon_3_01T_00_01std_1_1voidd3c8626707e735e4a36d3c8dc67dd935.html" title=" " alt="" coords="209,5,415,89"/>
+<area shape="poly" id="edge47_Node000000_Node000001" title=" " alt="" coords="149,80,209,67,210,72,150,85"/>
+<area shape="rect" id="Node000003" href="$structboost_1_1ut_1_1type__traits_1_1has__static__member__object__value_3_01T_00_01std_1_1void__ac8bcc1bc24012347fb262d10f556e7d.html" title=" " alt="" coords="195,114,429,183"/>
+<area shape="poly" id="edge48_Node000000_Node000003" title=" " alt="" coords="150,111,195,121,194,126,149,116"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="17,319,135,344"/>
+<area shape="poly" id="edge49_Node000002_Node000001" title=" " alt="" coords="113,309,130,296,144,279,157,255,164,233,166,189,169,146,177,124,193,100,207,86,211,90,197,104,182,126,174,148,171,190,169,233,162,257,149,282,134,299,116,313"/>
+<area shape="poly" id="edge50_Node000002_Node000003" title=" " alt="" coords="109,309,145,279,159,256,167,236,175,215,193,193,209,181,212,186,197,197,180,218,172,238,164,259,149,282,113,313"/>
+<area shape="rect" id="Node000004" href="$structboost_1_1ut_1_1type__traits_1_1is__stream__insertable_3_01T_00_01std_1_1void__t_3_01declty1e88f2426f740c3800b26821dbe769b4.html" title=" " alt="" coords="195,207,429,306"/>
+<area shape="poly" id="edge51_Node000002_Node000004" title=" " alt="" coords="129,312,194,291,196,296,131,317"/>
+<area shape="rect" id="Node000006" href="$structboost_1_1ut_1_1type__traits_1_1has__static__member__object__epsilon.html" title=" " alt="" coords="209,331,415,385"/>
+<area shape="poly" id="edge52_Node000002_Node000006" title=" " alt="" coords="149,337,209,344,209,349,149,342"/>
+<area shape="rect" id="Node000007" href="$structboost_1_1ut_1_1type__traits_1_1has__static__member__object__value.html" title=" " alt="" coords="209,409,415,464"/>
+<area shape="poly" id="edge53_Node000002_Node000007" title=" " alt="" coords="110,349,196,396,224,407,222,412,194,400,108,354"/>
+<area shape="rect" id="Node000008" href="$structboost_1_1ut_1_1type__traits_1_1is__stream__insertable.html" title=" " alt="" coords="229,488,395,543"/>
+<area shape="poly" id="edge54_Node000002_Node000008" title=" " alt="" coords="93,355,135,415,163,447,196,474,230,492,227,497,193,479,160,451,131,418,89,358"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="20,244,132,269"/>
+<area shape="poly" id="edge55_Node000005_Node000004" title=" " alt="" coords="145,254,195,254,195,259,145,259"/>
+</map>

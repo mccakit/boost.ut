@@ -1,0 +1,7 @@
+<map id="boost::ut::type_traits::is_stream_insertable&lt; T, std::void_t&lt; decltype(std::declval&lt; std::ostream &amp; &gt;()&lt;&lt; detail::get(std::declval&lt; T &gt;()))&gt; &gt;" name="boost::ut::type_traits::is_stream_insertable&lt; T, std::void_t&lt; decltype(std::declval&lt; std::ostream &amp; &gt;()&lt;&lt; detail::get(std::declval&lt; T &gt;()))&gt; &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,79,251,177"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,124,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,41,105,77,101,80,77,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="147,5,259,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,44,167,80,163,77,186,41"/>
+</map>
