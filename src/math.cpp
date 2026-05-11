@@ -1,4 +1,3 @@
-// ut-math.cppm
 export module boost.ut:math;
 
 import std;

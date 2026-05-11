@@ -1,4 +1,3 @@
-// ut-events.cppm
 export module boost.ut:events;
 
 import std;

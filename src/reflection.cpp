@@ -1,4 +1,3 @@
-// ut-reflection.cppm
 export module boost.ut:reflection;
 
 import std;

@@ -1,4 +1,3 @@
-// ut-type_traits.cppm
 export module boost.ut:type_traits;
 
 import std;

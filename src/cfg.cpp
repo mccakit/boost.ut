@@ -1,6 +1,4 @@
-// ut-cfg.cppm
 export module boost.ut:cfg;
-
 import std;
 import :reflection;
 

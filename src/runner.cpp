@@ -1,4 +1,3 @@
-// ut-runner.cppm
 export module boost.ut:runner;
 
 import std;

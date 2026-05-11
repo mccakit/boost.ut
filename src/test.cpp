@@ -1,4 +1,3 @@
-// ut-test.cppm
 export module boost.ut:test;
 
 import std;

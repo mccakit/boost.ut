@@ -1,4 +1,3 @@
-// ut-utility.cppm
 export module boost.ut:utility;
 
 import std;

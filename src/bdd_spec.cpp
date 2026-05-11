@@ -1,6 +1,4 @@
-// ut-bdd_spec.cppm
 export module boost.ut:bdd_spec;
-
 import std;
 import :type_traits;
 import :utility;
