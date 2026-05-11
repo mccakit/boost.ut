@@ -7,4 +7,7 @@
 //
 import std;
 import boost.ut;
-int main() { boost::ut::expect(true); }
+int main()
+{
+    boost::ut::expect(true);
+}

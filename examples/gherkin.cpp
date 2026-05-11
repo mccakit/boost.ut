@@ -7,44 +7,50 @@
 //
 import std;
 import boost.ut;
-template <class T>
-class calculator {
- public:
-  auto enter(const T& value) -> void { values_.push_back(value); }
-  auto add() -> void {
-    result_ = std::accumulate(std::cbegin(values_), std::cend(values_), T{});
-  }
-  auto sub() -> void {
-    result_ = std::accumulate(std::cbegin(values_) + 1, std::cend(values_),
-                              values_.front(), std::minus{});
-  }
-  auto get() const -> T { return result_; }
+template <class T> class calculator
+{
+    public:
+        auto enter(const T &value) -> void
+        {
+            values_.push_back(value);
+        }
+        auto add() -> void
+        {
+            result_ = std::accumulate(std::cbegin(values_), std::cend(values_), T {});
+        }
+        auto sub() -> void
+        {
+            result_ = std::accumulate(std::cbegin(values_) + 1, std::cend(values_), values_.front(), std::minus {});
+        }
+        auto get() const -> T
+        {
+            return result_;
+        }
 
- private:
-  std::vector<T> values_{};
-  T result_{};
+    private:
+        std::vector<T> values_ {};
+        T result_ {};
 };
 
-int main(int argc, const char** argv) {
-  using namespace boost::ut;
+int main(int argc, const char **argv)
+{
+    using namespace boost::ut;
 
-  bdd::gherkin::steps steps = [](auto& steps) {
-    steps.feature("Calculator") = [&] {
-      steps.scenario("*") = [&] {
-        steps.given("I have calculator") = [&] {
-          calculator<int> calc{};
-          steps.when("I enter {value}") = [&](int value) { calc.enter(value); };
-          steps.when("I press add") = [&] { calc.add(); };
-          steps.when("I press sub") = [&] { calc.sub(); };
-          steps.then("I expect {value}") = [&](int result) {
-            expect(that % calc.get() == result);
-          };
+    bdd::gherkin::steps steps = [](auto &steps) {
+        steps.feature("Calculator") = [&] {
+            steps.scenario("*") = [&] {
+                steps.given("I have calculator") = [&] {
+                    calculator<int> calc {};
+                    steps.when("I enter {value}") = [&](int value) { calc.enter(value); };
+                    steps.when("I press add") = [&] { calc.add(); };
+                    steps.when("I press sub") = [&] { calc.sub(); };
+                    steps.then("I expect {value}") = [&](int result) { expect(that % calc.get() == result); };
+                };
+            };
         };
-      };
     };
-  };
 
-  // clang-format off
+    // clang-format off
   "Calculator"_test = steps |
     R"(
       Feature: Calculator
@@ -63,15 +69,15 @@ int main(int argc, const char** argv) {
            When I press sub
            Then I expect 2
     )";
-  // clang-format on
+    // clang-format on
 
-  if (argc == 2) {
-    const auto file = [](const auto path) {
-      std::ifstream file{path};
-      return std::string{(std::istreambuf_iterator<char>(file)),
-                         std::istreambuf_iterator<char>()};
-    };
+    if (argc == 2)
+    {
+        const auto file = [](const auto path) {
+            std::ifstream file {path};
+            return std::string {(std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>()};
+        };
 
-    "Calculator"_test = steps | file(argv[1]);
-  }
+        "Calculator"_test = steps | file(argv[1]);
+    }
 }

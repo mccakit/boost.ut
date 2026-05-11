@@ -8,13 +8,14 @@
 import std;
 import boost.ut;
 
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  "module"_test = [] {
-    // clang-format off
+    "module"_test = [] {
+        // clang-format off
     expect(42_i == 42 and constant<3 == 3_i>);
-    // clang-format on
-    expect(std::vector{1, 2, 3} == std::vector{1, 2, 3});
-  };
+        // clang-format on
+        expect(std::vector {1, 2, 3} == std::vector {1, 2, 3});
+    };
 }

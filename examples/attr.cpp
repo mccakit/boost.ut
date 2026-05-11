@@ -10,22 +10,23 @@ import boost.ut;
 
 constexpr auto sum = [](auto... args) { return (0 + ... + args); };
 
-int main() {
-  using boost::ut::operator""_test;
-  using namespace boost::ut::literals;
-  using namespace boost::ut::operators::terse;
+int main()
+{
+    using boost::ut::operator""_test;
+    using namespace boost::ut::literals;
+    using namespace boost::ut::operators::terse;
 
-  "macro"_test = [] {
+    "macro"_test = [] {
 #define expect void(),
-    expect sum(1, 1) == 2_i;
-    expect(6_i == sum(1, 2, 3));
+        expect sum(1, 1) == 2_i;
+        expect(6_i == sum(1, 2, 3));
 #undef expect
-  };
+    };
 
 #if __has_cpp_attribute(expect)
-  "attribute"_test = [] {
-    [[expect]] 3_i == sum(1, 2);
-    [[expect]] (sum(1, 2) == 3_i);
-  };
+    "attribute"_test = [] {
+        [[expect]] 3_i == sum(1, 2);
+        [[expect]] (sum(1, 2) == 3_i);
+    };
 #endif
 }

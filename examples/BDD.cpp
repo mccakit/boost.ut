@@ -8,31 +8,32 @@
 import std;
 import boost.ut;
 
-int main() {
-  using namespace boost::ut::literals;
-  using namespace boost::ut::operators::terse;
-  using namespace boost::ut::bdd;
+int main()
+{
+    using namespace boost::ut::literals;
+    using namespace boost::ut::operators::terse;
+    using namespace boost::ut::bdd;
 
-  "Scenario"_test = [] {
-    given("I have...") = [] {
-      when("I run...") = [] {
-        then("I should have...") = [] { 1_u == 1u; };
-        then("I should have...") = [] { 1u == 1_u; };
-      };
+    "Scenario"_test = [] {
+        given("I have...") = [] {
+            when("I run...") = [] {
+                then("I should have...") = [] { 1_u == 1u; };
+                then("I should have...") = [] { 1u == 1_u; };
+            };
+        };
     };
-  };
 
-  feature("Calculator") = [] {
-    scenario("Addition") = [] {
-      given("I have number 40") = [] {
-        auto number = 40;
-        when("I add 2 to number") = [&number] { number += 2; };
-        then("I expect number to be 42") = [&number] { 42_i == number; };
-      };
+    feature("Calculator") = [] {
+        scenario("Addition") = [] {
+            given("I have number 40") = [] {
+                auto number = 40;
+                when("I add 2 to number") = [&number] { number += 2; };
+                then("I expect number to be 42") = [&number] { 42_i == number; };
+            };
+        };
     };
-  };
 
-  // clang-format off
+    // clang-format off
   scenario("Addition");
     given("I have number 40");
       auto number = 40;
@@ -42,5 +43,5 @@ int main() {
 
     then("I expect number to be 42");
       42_i == number;
-  // clang-format on
+    // clang-format on
 }

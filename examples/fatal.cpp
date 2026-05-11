@@ -7,49 +7,50 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using boost::ut::operator""_test;
-  using namespace boost::ut::literals;
-  using boost::ut::fatal;
+int main()
+{
+    using boost::ut::operator""_test;
+    using namespace boost::ut::literals;
+    using boost::ut::fatal;
 
-  "fatal"_test = [] {
+    "fatal"_test = [] {
+        using namespace boost::ut::operators;
+        using boost::ut::expect;
+
+        std::optional<int> o {42};
+        expect(fatal(o.has_value()));
+        expect(*o == 42_i);
+    };
+
+    "fatal logging"_test = [] {
+        using namespace boost::ut::operators;
+        using boost::ut::expect;
+
+        std::optional<int> o {42};
+        expect(o.has_value()) << "log messages...." << fatal;
+        expect(*o == 42_i);
+    };
+
+    "fatal matcher"_test = [] {
+        using namespace boost::ut::operators;
+        using boost::ut::expect;
+        using boost::ut::that;
+
+        std::optional<int> o {42};
+        expect(fatal(that % o.has_value()) and that % *o == 42);
+    };
+
+    "fatal terse"_test = [] {
+        using namespace boost::ut::operators::terse;
+
+        std::optional<int> o {42};
+        (fatal(o.has_value()) and *o == 42_i);
+    };
+
     using namespace boost::ut::operators;
     using boost::ut::expect;
 
-    std::optional<int> o{42};
-    expect(fatal(o.has_value()));
-    expect(*o == 42_i);
-  };
-
-  "fatal logging"_test = [] {
-    using namespace boost::ut::operators;
-    using boost::ut::expect;
-
-    std::optional<int> o{42};
-    expect(o.has_value()) << "log messages...." << fatal;
-    expect(*o == 42_i);
-  };
-
-  "fatal matcher"_test = [] {
-    using namespace boost::ut::operators;
-    using boost::ut::expect;
-    using boost::ut::that;
-
-    std::optional<int> o{42};
-    expect(fatal(that % o.has_value()) and that % *o == 42);
-  };
-
-  "fatal terse"_test = [] {
-    using namespace boost::ut::operators::terse;
-
-    std::optional<int> o{42};
-    (fatal(o.has_value()) and *o == 42_i);
-  };
-
-  using namespace boost::ut::operators;
-  using boost::ut::expect;
-
-  std::vector v{1u};
-  expect(fatal(std::size(v) == 1_ul));
-  expect(v[0] == 1_u);
+    std::vector v {1u};
+    expect(fatal(std::size(v) == 1_ul));
+    expect(v[0] == 1_u);
 }

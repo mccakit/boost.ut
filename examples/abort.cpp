@@ -10,12 +10,13 @@
 #include <cassert>
 import std;
 import boost.ut;
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  "abort"_test = [] {
-    expect(not aborts([] {}));
-    expect(aborts([] { assert(false); }));
-    expect(aborts([] { throw; }));
-  };
+    "abort"_test = [] {
+        expect(not aborts([] {}));
+        expect(aborts([] { assert(false); }));
+        expect(aborts([] { throw; }));
+    };
 }

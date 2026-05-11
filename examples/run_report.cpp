@@ -10,14 +10,14 @@ import boost.ut;
 namespace ut = boost::ut;
 
 ut::suite basic = [] {
-  using namespace ut;
-  should("equal") = [] { expect(42_i == 42); };
+    using namespace ut;
+    should("equal") = [] { expect(42_i == 42); };
 };
 
-int main() {
-  const auto result = ut::cfg<>.run(
-      {.report_errors =
-           true});  // explicitly run registered test suites and report errors
-  std::cout << "After report\n";
-  return result;
+int main()
+{
+    const auto result =
+        ut::cfg<>.run({.report_errors = true}); // explicitly run registered test suites and report errors
+    std::cout << "After report\n";
+    return result;
 }

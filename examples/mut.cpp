@@ -7,22 +7,23 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  auto i = 0;  // mutable
+    auto i = 0; // mutable
 
-  "mut"_test = [i] {
-    expect((i == 0_i) >> fatal);  // immutable
+    "mut"_test = [i] {
+        expect((i == 0_i) >> fatal); // immutable
 
-    should("++") = [i] {
-      expect(++mut(i) == 1_i);  // mutable
-      expect(i == 1_i);         // immutable
+        should("++") = [i] {
+            expect(++mut(i) == 1_i); // mutable
+            expect(i == 1_i);        // immutable
+        };
+
+        should("--") = [i] {
+            expect(--mut(i) == -1_i); // mutable
+            expect(i == -1_i);        // immutable
+        };
     };
-
-    should("--") = [i] {
-      expect(--mut(i) == -1_i);  // mutable
-      expect(i == -1_i);         // immutable
-    };
-  };
 }

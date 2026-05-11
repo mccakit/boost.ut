@@ -7,14 +7,13 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  auto i = 0;
-  expect((i == 0_i) >> fatal);
+    auto i = 0;
+    expect((i == 0_i) >> fatal);
 
-  should("return increased number for ++") = [i] { expect(++mut(i) == 1_i); };
-  should("return decreased number for --") = [i]() mutable {
-    expect(--i == -1_i);
-  };
+    should("return increased number for ++") = [i] { expect(++mut(i) == 1_i); };
+    should("return decreased number for --") = [i]() mutable { expect(--i == -1_i); };
 }

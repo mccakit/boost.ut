@@ -7,21 +7,22 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using boost::ut::operator""_test;
-  using boost::ut::operator""_i;
+int main()
+{
+    using boost::ut::operator""_test;
+    using boost::ut::operator""_i;
 
-  "using"_test = [] {
-    using boost::ut::expect;
+    "using"_test = [] {
+        using boost::ut::expect;
 
-    using boost::ut::eq;
-    expect(eq(42, 42));
+        using boost::ut::eq;
+        expect(eq(42, 42));
 
-    using boost::ut::operator==;
-    expect(42_i == 42);
+        using boost::ut::operator==;
+        expect(42_i == 42);
 
-    using boost::ut::operator and;
-    using boost::ut::that;
-    expect(that % 1 == 1 and that % 2 == 2);
-  };
+        using boost::ut::operator and;
+        using boost::ut::that;
+        expect(that % 1 == 1 and that % 2 == 2);
+    };
 }

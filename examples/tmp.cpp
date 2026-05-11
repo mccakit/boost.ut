@@ -7,39 +7,44 @@
 //
 import std;
 import boost.ut;
-template <class...>
-struct list {};
+template <class...> struct list
+{
+};
 
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  static constexpr auto i = 42;
+    static constexpr auto i = 42;
 
-  "type"_test = [] {
-    constexpr auto return_int = [] { return i; };
+    "type"_test = [] {
+        constexpr auto return_int = [] { return i; };
 
-    expect(type<>(i) == type<int>);
-    expect(type<int> == type<>(i));
-    expect(type<int> == return_int());
-    expect(type<float> != return_int());
-  };
+        expect(type<>(i) == type<int>);
+        expect(type<int> == type<>(i));
+        expect(type<int> == return_int());
+        expect(type<float> != return_int());
+    };
 
-  "constant"_test = [] {
-    // clang-format off
+    "constant"_test = [] {
+        // clang-format off
     expect(constant<42_i == i> and type<void> == type<void> and
            type<list<void, int>> == type<list<void, int>>);
-    // clang-format on
-  };
+        // clang-format on
+    };
 
 #if defined(__cpp_concepts)
-  "compiles"_test = [] {
-    struct foo {
-      int value{};
-    };
-    struct bar {};
+    "compiles"_test = [] {
+        struct foo
+        {
+                int value {};
+        };
+        struct bar
+        {
+        };
 
-    expect([](auto t) { return requires { t.value; }; }(foo{}));
-    expect(not[](auto t) { return requires { t.value; }; }(bar{}));
-  };
+        expect([](auto t) { return requires { t.value; }; }(foo {}));
+        expect(not[](auto t) { return requires { t.value; }; }(bar {}));
+    };
 #endif
 }

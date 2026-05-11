@@ -8,17 +8,16 @@
 import std;
 import boost.ut;
 
-int main(int argc, const char** argv) {
-  using namespace boost::ut;
+int main(int argc, const char **argv)
+{
+    using namespace boost::ut;
 
-  cfg<override> = {.filter = argc > 1 ? argv[1] : "",
-                   .colors = argc > 2 and argv[2][0] == '0'
-                                 ? colors{.none = "", .pass = "", .fail = ""}
-                                 : colors{},
-                   .dry_run = argc > 3 ? argv[3][0] == '1' : false};
+    cfg<override> = {.filter = argc > 1 ? argv[1] : "",
+                     .colors = argc > 2 and argv[2][0] == '0' ? colors {.none = "", .pass = "", .fail = ""} : colors {},
+                     .dry_run = argc > 3 ? argv[3][0] == '1' : false};
 
-  "cli"_test = [] {
-    "pass"_test = [] { expect(42 == 42_i); };
-    "fail"_test = [] { expect(0 == 42_i); };
-  };
+    "cli"_test = [] {
+        "pass"_test = [] { expect(42 == 42_i); };
+        "fail"_test = [] { expect(0 == 42_i); };
+    };
 }

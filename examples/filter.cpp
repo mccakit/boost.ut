@@ -7,15 +7,16 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  cfg<override> = {.filter = "run.sub1"};
+    cfg<override> = {.filter = "run.sub1"};
 
-  "run"_test = [] {
-    "sub1"_test = [] { expect(42 == 42_i); };
-    "sub2"_test = [] { expect(43 == 42_i); };
-  };
+    "run"_test = [] {
+        "sub1"_test = [] { expect(42 == 42_i); };
+        "sub2"_test = [] { expect(43 == 42_i); };
+    };
 
-  "don't run"_test = [] { expect(0 == 1_i) << "don't run"; };
+    "don't run"_test = [] { expect(0 == 1_i) << "don't run"; };
 }

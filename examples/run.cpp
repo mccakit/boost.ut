@@ -10,14 +10,13 @@ import boost.ut;
 namespace ut = boost::ut;
 
 ut::suite _ = [] {
-  using namespace ut;
+    using namespace ut;
 
-  "test suite"_test = [] {
-    "should be equal"_test = [] { expect(42_i == 42); };
-  };
+    "test suite"_test = [] { "should be equal"_test = [] { expect(42_i == 42); }; };
 };
 
-int main(int argc, const char** argv) {
-  // explicitly run registered test suites and manually pass argc/argv
-  return ut::cfg<>.run({.argc = argc, .argv = argv});
+int main(int argc, const char **argv)
+{
+    // explicitly run registered test suites and manually pass argc/argv
+    return ut::cfg<>.run({.argc = argc, .argv = argv});
 }

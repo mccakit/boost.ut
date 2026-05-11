@@ -7,12 +7,13 @@
 //
 import std;
 import boost.ut;
-int main() {
-  using namespace boost::ut;
+int main()
+{
+    using namespace boost::ut;
 
-  cfg<override> = {.filter = "tag", .tag = {"execute"}};
+    cfg<override> = {.filter = "tag", .tag = {"execute"}};
 
-  // clang-format off
+    // clang-format off
   tag("execute") / skip /
   "tag"_test = [] {
     expect(42_i == 43) << "should not fire!";
@@ -31,5 +32,5 @@ int main() {
   "tag"_test= [] {
     expect(42_i == 42);
   };
-  // clang-format on
+    // clang-format on
 }

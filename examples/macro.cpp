@@ -7,35 +7,46 @@
 //
 import std;
 import boost.ut;
-#define EXPECT(...)            \
-  using namespace ::boost::ut; \
-  ::boost::ut::expect(::boost::ut::that % __VA_ARGS__)
+#define EXPECT(...)                                                                                                    \
+    using namespace ::boost::ut;                                                                                       \
+    ::boost::ut::expect(::boost::ut::that % __VA_ARGS__)
 #define SUITE ::boost::ut::suite _ = []
-#define TEST(name) ::boost::ut::detail::test{"test", name} = [=]() mutable
-#define TEST_P(name, ...)                 \
-  using namespace ::boost::ut::operators; \
-  ::boost::ut::detail::test{"test", name} = [=](__VA_ARGS__) mutable
+#define TEST(name) ::boost::ut::detail::test {"test", name} = [=]() mutable
+#define TEST_P(name, ...)                                                                                              \
+    using namespace ::boost::ut::operators;                                                                            \
+    ::boost::ut::detail::test {"test", name} = [=](__VA_ARGS__) mutable
 
-SUITE {
-  TEST("suite") { EXPECT(42 == 42); };
+SUITE
+{
+    TEST("suite")
+    {
+        EXPECT(42 == 42);
+    };
 
-  TEST_P("parameterized", const auto& arg) {
-    EXPECT(arg > 0) << "all values greater than 0";
-  }
-  | std::vector{1, 2, 3};
+    TEST_P("parameterized", const auto &arg)
+    {
+        EXPECT(arg > 0) << "all values greater than 0";
+    }
+    | std::vector {1, 2, 3};
 };
 
-int main() {
-  TEST("macro") { EXPECT(1 != 2); };
-
-  TEST("vector") {
-    std::vector<int> v(5);
-
-    EXPECT((5u == std::size(v)) >> fatal);
-
-    TEST("resize bigger") {
-      v.resize(10);
-      EXPECT(10u == std::size(v));
+int main()
+{
+    TEST("macro")
+    {
+        EXPECT(1 != 2);
     };
-  };
+
+    TEST("vector")
+    {
+        std::vector<int> v(5);
+
+        EXPECT((5u == std::size(v)) >> fatal);
+
+        TEST("resize bigger")
+        {
+            v.resize(10);
+            EXPECT(10u == std::size(v));
+        };
+    };
 }
