@@ -1,12 +1,12 @@
-Documentation
+### Documentation
 
 https://boost-ext.github.io/ut/
 
-API Reference
+### API Reference
 
 https://mccakit.github.io/boost_ut/
 
-Using the package
+### Packaging and COnsumption
 
 Currently I only support clang, and module consumption is only based on bmi's, just pkgconfig package works, here is my conanfile recipe I use:
 
@@ -51,4 +51,13 @@ class boost_ut(ConanFile):
         subprocess.run(f'bash -c "cmake --install build"', shell=True, check=True)
 
 ```
+Here is a snippet for consuming it in cmake:
+
+```
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(BOOST.UT REQUIRED IMPORTED_TARGET boost.ut)
+...
+target_link_libraries(app PRIVATE PkgConfig::BOOST.UT)
+```
+
 
