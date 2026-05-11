@@ -1,0 +1,8 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/lib
+
+Name: boost_ut
+Version: @PROJECT_VERSION@
+Description: @PROJECT_DESCRIPTION@
+Libs: -L${libdir} -lboost_ut
+Cflags: -fprebuilt-module-path=${libdir}/cxx/bmi
